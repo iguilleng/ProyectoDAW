@@ -1,0 +1,94 @@
+<html>
+            <tr>
+                <center><a href="Administrador/iniciarAdmi.html"><font color='white'>Administrador</font></a></center>
+            </tr>
+</html>
+<html>
+<head>
+
+	<title> HOME | Licores LIX</title> 
+	</head> 
+	<body> 
+	<script> 
+	var mydate=new Date(); 
+	var year=mydate.getYear(); 
+	if (year < 1000) 
+	year+=1900; 
+	var day=mydate.getDay(); 
+	var month=mydate.getMonth()+1; 
+	if (month<10) 
+	month="0"+month; 
+	var daym=mydate.getDate(); 
+	if (daym<10) 
+	daym="0"+daym; 
+	document.write("<small><font color='white' face='Arial'><b>"+daym+"/"+month+"/"+year+"</b></font></small>") 
+	</script> 
+
+	<center>
+	<h1><IMG SRC="imagenes/logotiposmall.png"></IMG></h1>
+	<b><h1 >VENTA DE LICORES "LIX"</h1></b></center>
+	<b>Bienbenidos a nuestro local de ventas a todo el Peru</b>
+	<marquee width="50%" height="60" align="bottom">
+	<b>VINOS.....TEQUILAS.....WHISKY.....AMARGOS.....CHAMPAGNE</b>	
+	</marquee>
+</head>
+
+
+
+<style type="text/css">
+.post-body img {
+border-radius: 50% 0; /* Borde redondeado */
+box-shadow: 0px 0px 15px #000; /* Sombra */
+/*padding:15px; /* Espacio entre la imagen y el borde */
+background:#000000; /* Color de fondo que se ve entre el espacio */
+-moz-transition: all 1s;
+-webkit-transition: all 1s;
+-o-transition: all 1s;
+}
+.post-body img:hover {
+border-radius:0; /* Con esto quitamos el borde redondeado */
+-moz-transition: all 1s;
+-webkit-transition: all 1s;
+-o-transition: all 1s;
+cursor:pointer;
+}
+</style>
+
+
+<body background="imagenes/fondoNegro.jpg" text="white">
+
+<form method="post" action="http://localhost/proyecto/web/datosCliente.php">
+
+	<table style="text-aling: left; width: 30%" cellpadding="3">
+	<td class="post-body"><nav>
+				<center>
+					<ul>
+						<A HREF="http://localhost/proyecto/web/PRUEBA.php"target="_blank"><img width=200 height=50 onmouseover="this.width=250;this.height=60;" onmouseout="this.width=200;this.height=50;" src="imagenes/RP.jpg "border-radius: 50% 0;></A>						
+						<A HREF="IniciarSecion.html"target="_blank"><img width=200 height=50 onmouseover="this.width=250;this.height=60;" onmouseout="this.width=200;this.height=50;" src="imagenes/IS.jpg"WIDTH=200 HEIGHT=50>
+
+						<A HREF="registrarCliente.html"target="_blank"><img width=200 height=50 onmouseover="this.width=250;this.height=60;" onmouseout="this.width=200;this.height=50;" src="imagenes/R.jpg"WIDTH=200 HEIGHT=50></A>
+
+						<A HREF="nosotros.html"target="_blank"><img width=200 height=50 onmouseover="this.width=250;this.height=60;" onmouseout="this.width=200;this.height=50;" src="imagenes/N.jpg"WIDTH=200 HEIGHT=50></A>						
+					</ul>
+				</center>
+				</nav></td>
+				<th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th><th></th>
+				<td class="post-body"><div colspan="3" align="center"><img src="imagenes/images.jpg" <br/><br/>
+			<audio src="musica/WelcomToTheJungle.mp3" type="audio/mp3" controls autoplay /></td>
+		<tbody>		
+			<BR>
+			
+			
+			</tbody>
+	</table>
+</form>
+<footer>
+		<section class="descripcion">
+				<article align="center" >
+					<h4>UBICACION</h4><br>
+					<p>Direccion: Avenida E.E.U.U 120 Jose Luis Bustamante y Rivero<br>Cel: 983456723<br>Correo Electronico: lix@hotmail.com<br>Copyrigth 2015 Desarrollo de Aplicaciones Web</p>
+				</article>
+		</section>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<html><head>
+	<script type="text/javascript">
+		var obj, dir;
+		function iniciar(){
+			var txt = document.getElementById("ola").innerHTML;
+			var letras = txt.split(" ");
+			var res = "";
+			for (var i = 0;i < letras.length; i++)
+				res += "<span>"+letras[i] + "</span>";
+			document.getElementById("ola").innerHTML = res;
+			obj = document.getElementById("ola").firstChild;
+			dir=1;
+			setInterval("efecto()",100);
+		}
+		function efecto() {
+			obj.style.color = "black";
+			if(dir == 1){
+				if (obj.nextSibling != null)
+					obj = obj.nextSibling;
+				else
+					dir = 0;
+			}
+			else {
+				if(obj.previousSibling != null)
+					obj = obj.previousSibling;
+				else
+					dir = 1;
+			}
+			obj.style.color = "white";
+		}
+	</script>
+	<center><h2><p id="ola">Registrar Datos del Cliente</p></h2></center>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body {
+			background: url(imagenes/bg1.jpg);
+			background-position: center;
+		}
+		form {
+			background: #333333;
+			width: 360px;
+			border: 1px solid #4e4d4d;
+			border-radius: 3px;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+			box-shadow:inset 0 0 10px #000;
+			margin:100px auto;
+		}
+		form h1 {
+			text-align: center;
+			color:#fff;
+			font-weight: normal;
+			font-size: 40pt;
+			margin: 30px 0px;
+		}
+		form h2 {
+			color:#fff;
+			font-weight: normal;
+			font-size: 10pt;
+			margin: 5px 50px;
+		}
+		form h3 {
+			text-align: center;
+			color:#fff;
+			font-weight: normal;
+			font-size: 10pt;
+			margin: 5px 0px;
+		}
+		form input {
+			width: 280px;
+			height: 35px;
+			padding: 0px 10px;
+			margin: 10px 40px;
+			color:#6d6d6d;
+			text-align: center;
+		}
+		form input[type="radio"]{
+			width: 15px;
+			height: 15px;
+			padding: 10px 5px;
+			margin: 5px 5px 10px 70px;
+			color:#6d6d6d;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+		form button {
+			width:135px;
+			margin: 20px 0px 30px 110px;
+			height: 50px;
+			border:1px solid #232323;
+			box-shadow: 0px 2px 0px #000;
+			-moz-box-shadow: 0px 2px 0px #000;
+			-webkit-box-shadow: 0px 2px 0px #000;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+		form button:hover {
+			background: #3a3a3a;
+		}
+	</style>
+</head>
+<body text="white" onload="iniciar()">
+<form method="post" action="http://localhost/proyecto/web/datosCliente.php">
+	<table style="text-aling: left; width: 30%" cellpadding="3" rules="rows">
+		<tbody>
+
+			<h1><center><IMG SRC="imagenes/logotiposmall.png"></center></IMG></h1>
+			<h1>Registro</h1>
+			<input type="text" name="nick" id="nick" placeholder="nick de cliente" onfocus="javascript:enfocado(this.id);" onblur="javascript:desenfocado(this.id);">
+			<input type="text" name="nombre" id="nombre" placeholder="Nombres y apellidos" onfocus="javascript:enfocado(this.id);" onblur="javascript:desenfocado(this.id);">
+			<input type="email" name="email1" id="email1" placeholder="correo elentronico" onfocus="javascript:enfocado(this.id);" onblur="javascript:desenfocado(this.id);">
+			<input type="password" name="password1" id="password1" placeholder="Ingrese Password" placeholder="ejempo@gmail.com" onfocus="javascript:enfocado(this.id);" onblur="javascript:desenfocado(this.id);">
+			<input type="password" name="password2" id="password2" placeholder="Confirme Password" onfocus="javascript:enfocado(this.id);" onblur="javascript:desenfocado(this.id);">
+			<h3>Fecha de Nacimiento:</h3>
+			<input type="date" name="fecna" id="fecna" onfocus="javascript:enfocado(this.id);" onblur="javascript:desenfocado(this.id);">		
+			<button type="submit" value="Registrar" name="Registra">Registrar</button>
+		</tbody>
+	</table>
+</form>
+</body>
+</html>

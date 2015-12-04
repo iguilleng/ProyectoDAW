@@ -1,0 +1,121 @@
+<html>
+<head>
+	<script type="text/javascript">
+		var obj, dir;
+		function iniciar(){
+			var txt = document.getElementById("ola").innerHTML;
+			var letras = txt.split("");
+			var res = "";
+			for (var i = 0;i < letras.length; i++)
+				res += "<span>"+letras[i] + "</span>";
+			document.getElementById("ola").innerHTML = res;
+			obj = document.getElementById("ola").firstChild;
+			dir=1;
+			setInterval("efecto()",100);
+		}
+		function efecto() {
+			obj.style.color = "white";
+			if(dir == 1){
+				if (obj.nextSibling != null)
+					obj = obj.nextSibling;
+				else
+					dir = 0;
+			}
+			else {
+				if(obj.previousSibling != null)
+					obj = obj.previousSibling;
+				else
+					dir = 1;
+			}
+			obj.style.color = "black";
+		}
+		///////////////////////////////////////////////////
+		function mostrar(obj) {
+			while (obj.nextSibling != null && obj.className != "tooltip")
+				obj = obj.nextSibling;
+			if(obj != null)
+				obj.style.display = "inline";
+		}
+		function ocultar(obj) {
+			while (obj.nextSibling != null && obj.className != "tooltip")
+				obj = obj.nextSibling;
+			if(obj != null)
+				obj.style.display = "none";
+		}
+	</script>
+	<center><h2><p id="ola">Inicie Sesion</p></h2></center>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		body {
+			background:url(imagenes/bg1.jpg)#2b2b2a;
+		}
+
+		form {
+			background:#333333;
+			width:360px;
+			border:1px solid #4e4d4d;
+			border-radius:3px;
+			-moz-border-radius:3px;
+			-webkit-border-radius:3px;
+			box-shadow:inset 0 0 10px #000;
+			margin:100px auto;
+		}
+		form h1 {
+			text-align: center;
+			color:#fff;
+			font-weight: normal;
+			font-size: 40pt;
+			margin: 30px 0px;
+		}
+		form input {
+			width: 280px;
+			height: 35px;
+			padding: 0px 10px;
+			margin: 10px 40px;
+			color:#6d6d6d;
+			text-align: center;
+		}
+		form button {
+			width:135px;
+			margin: 20px 0px 30px 110px;
+			height: 50px;
+			border:1px solid #232323;
+			box-shadow: 0px 2px 0px #000;
+			-moz-box-shadow: 0px 2px 0px #000;
+			-webkit-box-shadow: 0px 2px 0px #000;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+		form button:hover {
+			background: #3a3a3a;
+		}
+
+		.tooltip{
+			background-color: yellow;
+			border: 2px solid orange;
+			display: none;
+			position: absolute;
+		}
+	</style>
+	
+</head>
+<body text="white" onload="iniciar()">
+<form method="post" action="http://localhost/proyecto/web/validacionUsuario.php">
+	<script src="funciones.js" language="JavaScript"></script>
+	<script src="jquery.min.js"></script>
+	<h1><IMG SRC="imagenes/logotiposmall.png"></IMG></h1>
+	<table style="text-aling: left; width: 30%" cellpadding="3" rules="rows">
+		<body>
+			<input type="text" name="nick" id="nick" placeholder="ingrese su usuario">
+			<input type="password" name="password" id="password" placeholder="ingrese su password">
+            <button type="submit" value="Iniciar Sesion" name="Isesion">Iniciar Sesion</button>
+		</body>
+	</table>
+</form>
+</body>
+</html>
+
